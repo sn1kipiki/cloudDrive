@@ -1,0 +1,86 @@
+$active: false;
+.auth{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+   
+
+    .auth-form{
+       
+        text-align: center;
+        min-height: 70rem;
+        width: 66rem;
+        border-radius: 3rem;
+        border: 0.2rem solid #FFF;
+        background: rgba(217, 217, 217, 0.10);
+        backdrop-filter: blur(10rem);
+        .auth-form__logo{
+            margin: 3rem 0px;
+            width: 40rem;
+            height: 7.7rem;
+           }
+        .auth-form__field{
+            margin-bottom: 4rem;
+            position: relative;
+            
+            
+            
+    
+            label{
+                position: absolute;
+                font-size: 3.2rem;
+                color: #fff;
+                top: 1rem;
+                left: 7rem;
+                transition: all 0.3s ease;
+                pointer-events: none;
+               
+            }
+            input:focus ~ label,
+            input:valid ~ label{
+                top: -2rem;
+                font-size: 2.4rem;
+            }
+            .auth-form__input{
+               
+                width: 53rem;
+                height: 6rem;
+                background-color: transparent;
+                border-bottom: 0.2rem solid #fff;
+                color: #fff;
+                font-size: 3.2rem;
+                padding-left: 1rem;
+                
+               
+            }
+            .auth-form__icon{
+                position: absolute;
+                right: 7rem;
+                top: 2rem;
+                height: 2.2rem;
+                width: 2.2rem;
+            }
+        }
+    }
+    .authButton{
+        width: 53rem;
+        height: 6rem;
+        background-color: #bea1ef;
+        font-size: 3.2rem;
+        font-weight: 50rem;
+        border-radius: 2rem;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover{
+            background-color:#ac86ee
+        }
+    }
+}

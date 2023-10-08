@@ -1,0 +1,21 @@
+.fileList{
+    
+    height: 85.7rem;
+    position: absolute;   
+    bottom: 0; 
+    
+    overflow: scroll;
+    
+    &::-webkit-scrollbar { width: 0; }
+    .fileList__container{
+        
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+@media screen and (max-height: 1000px) {
+    .fileList {
+        height: 70.7rem;
+    }
+  }

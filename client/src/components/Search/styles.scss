@@ -1,0 +1,43 @@
+@import "../../assets/styles/variables.scss";
+
+.search{
+    width: 63.5rem;
+    height: 6.5rem;
+    background-color: transparent;
+    border-radius: 2.2rem;
+    border: 0.4rem solid $lite-grey-color;
+    position: relative;
+
+    &:focus-within{
+        border: 0.4rem solid $medium-grey-color !important; 
+        .search__icon{
+            
+                color: $medium-grey-color;
+            
+        }
+    }
+    .search__icon{
+        width: 3.2rem;
+        position: absolute;
+        top: 1.7rem;
+        left: 2.3rem;
+        fill: $lite-grey-color;
+    }
+    .search__input{
+        width: calc(100% - 8rem);
+        height: 100%;
+        background-color: transparent;
+        padding-left: 8rem;
+        
+        color: $lite-grey-color;
+        &::placeholder {
+            color: $lite-grey-color;
+        }
+        &:focus{
+            color: $medium-grey-color;
+            &::placeholder {
+                color: $medium-grey-color;
+            }
+        }
+    }
+}

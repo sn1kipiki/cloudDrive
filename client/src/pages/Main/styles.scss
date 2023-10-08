@@ -1,0 +1,13 @@
+.mainPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    .contentField{
+        width: 57%;
+        height: 98%;
+        margin: 10px 0px;
+        background-color: #EEFFFF;
+        border-radius: 18px;;
+    }
+}

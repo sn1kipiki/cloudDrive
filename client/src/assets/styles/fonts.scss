@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Polly Rounded';
+    src: url('../fonts/PollyRounded-Thin.eot');
+    src: local('Polly Rounded Thin'), local('PollyRounded-Thin'),
+        url('../fonts/PollyRounded-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PollyRounded-Bold.woff2') format('woff2'),
+        url('../fonts/PollyRounded-Thin.woff') format('woff'),
+        url('../fonts/PollyRounded-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Rounded';
+    src: url('../fonts/PollyRounded-Light.eot');
+    src: local('Polly Rounded Light'), local('PollyRounded-Light'),
+        url('../fonts/PollyRounded-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PollyRounded-Light.woff2') format('woff2'),
+        url('../fonts/PollyRounded-Light.woff') format('woff'),
+        url('../fonts/PollyRounded-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Rounded';
+    src: url('../fonts/PollyRounded-Bold.eot');
+    src: local('Polly Rounded Bold'), local('PollyRounded-Bold'),
+        url('../fonts/PollyRounded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PollyRounded-Bold.woff2') format('woff2'),
+        url('../fonts/PollyRounded-Bold.woff') format('woff'),
+        url('../fonts/PollyRounded-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Polly Rounded';
+    src: url('../fonts/PollyRounded-Regular.eot');
+    src: local('Polly Rounded Regular'), local('PollyRounded-Regular'),
+        url('../fonts/PollyRounded-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PollyRounded-Regular.woff2') format('woff2'),
+        url('../fonts/PollyRounded-Regular.woff') format('woff'),
+        url('../fonts/PollyRounded-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

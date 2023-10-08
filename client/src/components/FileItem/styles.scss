@@ -1,0 +1,30 @@
+@import '../../assets/styles/variables.scss';
+
+.fileItem{
+    width: 101rem;
+    height: 7.6rem;
+    border-radius: 0.9rem;
+    background-color: $theme-color ;
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    .fileItem__img{
+        margin-left: 3.3rem ;
+        width: 3.8rem;
+        height: 3.8rem;
+
+    }
+    .fileItem__name{
+        margin-left: 4.6rem;
+
+    }
+    .fileItem__date{
+        margin-left:  31.8rem;
+    }
+    .fileItem__size{
+        margin-left: 8.1rem;
+    }
+    .fileItem__more{
+        margin-left: 5.4rem;
+    }
+}
