@@ -1,0 +1,7 @@
+{
+    "serverPort": 5000,
+    "dbUrl": "mongodb+srv://yurik140605:zx6142005@cluster0.lrzywlu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "secretKey": "mysecretkey",
+    "filePath": "C:\\CloudDiskProject\\cloudDrive\\server\\files",
+    "staticPath": "C:\\CloudDiskProject\\cloudDrive\\server\\static"
+}

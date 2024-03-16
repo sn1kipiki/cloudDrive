@@ -1,0 +1,24 @@
+@import "./variables";
+.navbar{
+	background-color: $theme-color1;
+	color: $text-color;
+}
+.header{
+	background-color: $theme-color1;
+	display: flex;
+	align-items: center;
+	// justify-content: space-around;
+	
+}
+.main{
+	background-color: #313239;
+}
+.headerGroup{
+	
+}
+
+.logo{
+	width: 5rem;
+	margin: 15px auto;
+	
+}
