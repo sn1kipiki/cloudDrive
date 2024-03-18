@@ -15,6 +15,7 @@ import Header from './components/Header/Header'
 import FavoreiteFilesPage from './pages/FavoriteFilesPage/FavoreiteFilesPage'
 import RecentFilesPage from './pages/RecentFilesPage/RecentFilesPage'
 import SettingsPage from './pages/SettingsPage/SettingsPage'
+import Uploader from './components/Uploader/Uploader'
 
 function App() {
   const isAuth = useSelector(state => state.user.isAuth)
@@ -66,7 +67,7 @@ function App() {
       </AppShell.Main>
     </AppShell>
     }
-
+      <Uploader/>
       </div>
     </BrowserRouter>
   );

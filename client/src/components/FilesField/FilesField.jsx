@@ -5,7 +5,7 @@ import { Grid } from '@mantine/core';
 import FileItem from '../FileItem/FileItem'
 function FilesField(props) {
 	const files = useSelector(state => state.files.files)
-
+	const fileView = useSelector(state => state.files.view)
 	// const files = useSelector(state => state.files.files).map((file) => <Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem key={file.id} file={file}/> </Grid.Col> )
 
 	return (
@@ -13,28 +13,18 @@ function FilesField(props) {
 		<>
 		<p className={s.header}>{props.dir ? "Folders" : "Files"}</p>
 		<hr className={s.hr} />
-<Grid  className={s.field}>
-		{files.map(file => 	props.dir ?  file.type === "dir" &&
-                       <Grid.Col span={{ base: 5, md: 2, lg: 1.5 }}> <FileItem file={file}/>
-
-											  </Grid.Col>
+		<div  className={ fileView === "plate" ? s.fieldPlate : s.field}>
+		{
+		files &&
+		files.map(file => 
+			
+			props.dir ?  file.type === "dir" &&
+                      <FileItem file={file}/>
 												:
 												file.type !== "dir" &&
-												<Grid.Col span={{ base: 5, md: 2, lg: 1.5 }}> <FileItem file={file}/>
-
-											  </Grid.Col>
-												)}
-												
-				</Grid>
-			{/* <Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col>
-			<Grid.Col span={{ base: 5, md: 3, lg: 2 }}> <FileItem/> </Grid.Col> */}
+												 <FileItem file={file}/>
+												)}										
+				</div>
 		</>
 	)
 }
