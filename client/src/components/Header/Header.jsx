@@ -5,7 +5,7 @@ import { Burger, Avatar, Input, CloseButton } from
 import s from './styles.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {createDir, getFiles, uploadFile, searchFiles} from "../../actions/file";
-
+import { API_URL } from '../../utils/config';
 import fileSearchIcon from "./assets/img/search.svg"
 import AddNew from '../AddNew/AddNew'
 import FolderLocation from '../FolderLocation/FolderLocation'
@@ -16,11 +16,12 @@ import FolderLocation from '../FolderLocation/FolderLocation'
 function Header({opened, toggle}) {
 	const dispatch = useDispatch()
 	const currentDir = useSelector(state => state.files.currentDir)
+	const currntUser = useSelector(state => state.user.currentUser)
 	const [sort, setSort] = useState('type')
 	// const [value, setValue] = useState('')
 	const [searchName, setSearchName] = useState('')
 	const [searchTimeout, setSearchTimeout] = useState(false)
-	
+	const avatar = currntUser.avatar ? `${API_URL + currntUser.avatar}` : fileSearchIcon
 	function searchChangeHandler(e) {
 		setSearchName(e.target.value)
 		if (searchTimeout != false) {
@@ -45,6 +46,10 @@ function Header({opened, toggle}) {
 			<div className={s.toparea}>
 				<Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
 				<Input
+				styles={{root: {marginBottom: "10px"},
+				input: {backgroundColor: "#313239",
+				color: '#fff'},
+				label: { color: '#fff' },}}
 				// mt={0}
 				value={searchName}
 				className={s.input}
@@ -63,7 +68,11 @@ function Header({opened, toggle}) {
 			
 					}
 				/>
-				<Avatar radius="xl" color="indigo"/>
+				{/* <Avatar currentUser  radius="xl" color="indigo"/> */}
+				<div style={{display: "flex", alignItems: "center", color: "#fff",}}>
+				<p>{currntUser.username}</p>
+				<img className={s.avatar} src={avatar} alt="" />
+				</div>
 			</div>
 			<div className={s.botarea}>
 				<FolderLocation/>

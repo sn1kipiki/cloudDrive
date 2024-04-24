@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useMantineColorScheme,  Button, NavLink, Box  } from '@mantine/core';
+import {useMantineColorScheme, Text,  Progress, NavLink, Box, Flex  } from '@mantine/core';
 import mainIcon from './assets/main.svg'
 import recentIcon from './assets/recent.svg'
 import trashIcon from './assets/trash.svg'
@@ -40,7 +40,7 @@ function Navigation({toggle}) {
 
    
       <Link to={item.href}>
-         <NavLink 
+         <NavLink classNames={s.navlink}
       // href={item.href}
             link={item.href}
             className={s.nav}
@@ -58,11 +58,9 @@ function Navigation({toggle}) {
   ));
 
 	return (
-    <>
-    
+
+
     <Box maw={220} className={s.box}>{items}</Box>
-    
-    </>
   
   
   );

@@ -257,38 +257,55 @@ class FileController {
           return res.status(500).json({ message: 'Помилка сервера' });
         }
       };
-      async addToFavorite (req, res) {
+      async addToFavorite(req, res) {
         const { fileId } = req.body;
       
         try {
-          const file = await File.findByIdAndUpdate(fileId, { isFavorite: true }, { new: true });
+          // Знаходимо файл за його ідентифікатором
+          const file = await File.findById(fileId);
       
           if (!file) {
             return res.status(404).json({ message: 'Файл не знайдено' });
           }
       
-          res.json({ message: 'Поле isFavorite змінено на true', file });
+          // Змінюємо поле isFavorite на протилежне значення
+          file.isFavorite = !file.isFavorite;
+          
+          // Зберігаємо оновлені дані файлу
+          const updatedFile = await file.save();
+      
+          res.json({ message: `Поле isFavorite змінено на ${file.isFavorite}`, file: updatedFile });
         } catch (error) {
           console.error(error);
           res.status(500).json({ message: 'Помилка сервера' });
         }
       };
-      async addToBin (req, res) {
+      
+      async addToBin(req, res) {
         const { fileId } = req.body;
       
         try {
-          const file = await File.findByIdAndUpdate(fileId, { isDelete: true }, { new: true });
+          // Знаходимо файл за його ідентифікатором
+          const file = await File.findById(fileId);
       
           if (!file) {
             return res.status(404).json({ message: 'Файл не знайдено' });
           }
       
-          res.json({ message: 'Поле isDelete змінено на true', file });
+          // Змінюємо поле isDelete на протилежне значення
+          file.isDelete = !file.isDelete;
+          
+          // Зберігаємо оновлені дані файлу
+          const updatedFile = await file.save();
+      
+          res.json({ message: `Поле isDelete змінено на ${file.isDelete}`, file: updatedFile });
         } catch (error) {
           console.error(error);
           res.status(500).json({ message: 'Помилка сервера' });
         }
       };
+      
+     
 }
 
 module.exports = new FileController()

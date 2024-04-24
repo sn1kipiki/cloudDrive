@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './style.module.scss'
 import backImg from './assets/img/arrow-left-circle-fill.svg'
 import plateImg from './assets/img/layout-grid-fill.svg'
 import rowsImg from './assets/img/list-check.svg'
@@ -21,9 +22,9 @@ function ToolsPanel() {
 			fileView === "plate" ?  dispatch(setFileView('list')) : dispatch(setFileView('plate'))
 		}
 	return (
-		<div>
-			<button onClick={() => backClickHandler()}> <img src={backImg} alt="turn back" /> </button>
-			<button onClick={() => changeView()}> <img src={ fileView == "plate" ? plateImg : rowsImg} alt="turn back" /> </button>
+		<div className={s.toolsblock}>
+			<button onClick={() => backClickHandler()}> <img src={backImg} className={s.icon} alt="turn back" /> </button>
+			<button onClick={() => changeView()}> <img src={ fileView == "plate" ? plateImg : rowsImg} className={s.icon} alt="turn back" /> </button>
 		</div>
 	)
 }

@@ -1,0 +1,17 @@
+.header{
+	font-size: 20px;
+	color: aliceblue;
+}
+.hr{
+	height: 1px;
+	margin-bottom: 15px;
+}
+.fieldPlate{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	// justify-content: space-between;
+}
+.field{
+	flex-direction: column;
+}

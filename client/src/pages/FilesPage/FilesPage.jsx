@@ -8,6 +8,7 @@ import ToolsPanel from '../../components/ToolsPanel/ToolsPanel'
 import { useWindowScroll } from '@mantine/hooks';
 import { Affix, Button, Text, Transition, rem } from '@mantine/core';
 
+
 function FilesPage() {
 	const [dragEnter, setDragEnter] = useState(false)
 	const [scroll, scrollTo] = useWindowScroll();
@@ -18,7 +19,7 @@ function FilesPage() {
 		dispatch(getFiles(currentDir))
 	}, [currentDir])
 	const files = useSelector(state => state.files.files)
-
+	{console.log(currentDir)}
 
 	function dragEnterHandler(event) {
 		event.preventDefault()
@@ -67,6 +68,7 @@ function FilesPage() {
           )}
         </Transition>
       </Affix>
+			
 		</div>
 	)
 }

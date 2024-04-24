@@ -1,8 +1,9 @@
 import React from 'react'
+import BinFilesField from '../../components/BinFilesField/BinFilesField'
 
 function BinPage() {
 	return (
-		<div>BinPage</div>
+		<BinFilesField/>
 	)
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {pushPathToStack, pushToStack, setCurrentDir, setMenuDisplay, setPath} from "../../reducers/fileReducer";
-import {deleteFile, downloadFile} from "../../actions/file";
+import {deleteFile, downloadFile, sendtoBin, setFavorite} from "../../actions/file";
 import iconType from '../../utils/icons.js'
 import s from './styles.module.scss'
 import moreImg from './assets/img/more-2-fill.svg'
@@ -35,7 +35,12 @@ function FileItem({file}) {
   function openMenuHandler(e) {
     e.stopPropagation()
   }
-
+  function setFavoriteClickHandler(e) {
+    dispatch(setFavorite(file))
+  }
+  function setBinClickHandler(e) {
+    dispatch(sendtoBin(file))
+  }
 	return (
     <div className={ fileView == "plate" ? s.cardfield__block : s.cardfield} onClick= {()=> openDirHandler(file)}>
 
@@ -78,12 +83,29 @@ function FileItem({file}) {
           </Menu.Item>
         }
 				<Menu.Divider />
+        
+        <Menu.Item
+          // leftSection={ <img src={folderImg} /> }
+          onClick={(e) => setFavoriteClickHandler(e)}
+        >
+						Add to favorite
+        </Menu.Item>
+        {file.isDelete ?
+
         <Menu.Item
           // leftSection={ <img src={folderImg} /> }
           onClick={(e) => deleteClickHandler(e)}
         >
-						Delete
+						delete
         </Menu.Item>
+        :
+        <Menu.Item
+          // leftSection={ <img src={folderImg} /> }
+          onClick={(e) => setBinClickHandler(e)}
+        >
+						Send to bin
+        </Menu.Item>
+        } 
       </Menu.Dropdown>
     </Menu>
         
