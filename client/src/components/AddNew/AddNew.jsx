@@ -18,20 +18,27 @@ function AddNew() {
 	}
 	function createHandler() {
 		dispatch(createDir(currentDir, dirName))
+		close()
+		setDirName("")
 	}
 
 	return (
 		<>
 			
-			<Modal opened={opened} onClose={close} centered styles={{
-        content: { backgroundColor: 'red' },
-				header:{ backgroundColor: 'var(--mantine-color-dark-6)' },
+			<Modal opened={opened} onClose={close}
+			title="Add new folder" centered styles={{
+        content: { backgroundColor: 'var(--mantine-color-dark-6)' },
+				header:{ backgroundColor: 'var(--mantine-color-dark-6)', color: "#fff" },
       }}
 >				<TextInput
-					placeholder="Input placeholder"
+					placeholder="Folder name"
 					value={dirName} onChange={(event) => setDirName(event.currentTarget.value)}
+					styles={{root: {marginBottom: "10px"},
+				input: {backgroundColor: "#313239",
+				color: '#fff'},
+				label: { color: '#fff' },}}
     		/>
-				<Button onClick={() => createHandler()}>Create</Button>
+				<Button className={s.modal_button} onClick={() => createHandler()}>Create</Button>
       </Modal>
 			{/* <button onClick={open} className={s.button}>Open modal</button> */}
 

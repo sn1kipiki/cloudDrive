@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {Text,  Progress, AppShell, Burger, Group,} from '@mantine/core';
+import { AppShell, Burger, Group,} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {useDispatch, useSelector} from "react-redux";
 import s from './assets/styles/app.module.scss'
 import {auth} from "./actions/user";
 import AuthPage from "./pages/AuthPage/AuthPage";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom"
+  import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom"
 import FilesPage from './pages/FilesPage/FilesPage'
 import BinPage from './pages/BinPage/BinPage'
 import Navigation from './components/Navigation/Navigation'
@@ -15,6 +15,7 @@ import FavoreiteFilesPage from './pages/FavoriteFilesPage/FavoreiteFilesPage'
 import RecentFilesPage from './pages/RecentFilesPage/RecentFilesPage'
 import SettingsPage from './pages/SettingsPage/SettingsPage'
 import Uploader from './components/Uploader/Uploader'
+import StorageFull from './components/StorageFull/StorageFull'
 
 
 function App() {
@@ -58,10 +59,7 @@ function App() {
           <div className={s.top}>
             <Navigation toggle={toggle}/>
           </div>
-          <div className={s.storageFull}>
-            <Text size="sm" fw={300} mb={10}>Large text</Text>
-            <Progress value={50} />
-          </div>
+          <StorageFull/>
           {/* <StorageFull/> */}
         </div>
       </AppShell.Navbar>

@@ -7,6 +7,7 @@ import s from './styles.module.scss'
 import moreImg from './assets/img/more-2-fill.svg'
 import {  Menu, Card, Image} from '@mantine/core';
 import sizeFormat from "../../utils/sizeFormat";
+import { truncate } from '../../utils/truncate.js';
 const theme = false
 function FileItem({file}) {
   
@@ -53,10 +54,10 @@ function FileItem({file}) {
             </Menu.Target>
           <img  src={iconType(file.type)} alt="" />
           </div>
-          <div className={s.bottom}>
-            <p className={s.name}>{file.name}</p>
+          
+            <p className={s.name}>{truncate(file.name) }</p>
             
-          </div> 
+         
       </>
       :
       <>   

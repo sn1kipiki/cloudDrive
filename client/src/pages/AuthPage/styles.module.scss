@@ -1,47 +1,22 @@
 @import '../../assets/styles/variables';
-
+$mantine-breakpoint-sm: 768px;
 .page{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  .form{
-    width: 45rem;
-    height: 31.7rem;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 1.2rem;
-    .topline{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 3.7rem;
+  background-color: #1E1E23;
+ 
+}
 
-      .name{
-        font-size: 2.4rem;
-        font-weight: 800;
-      }
-      .smalltext{
-        font-size: 1.4rem;
-        font-weight: 500;
-        span{
-          color: $purple-color;
-        }
-      }
-    }
-    .main{
-      margin-top: 2.7rem;
-      display: flex;
-      flex-direction: column;
-      .authbutton{
-        margin-top: 3.6rem;
-        width: 38.2rem;
-        height: 4.9rem;
-      }
-    }
-  }
+.title {
+  color: #fff;
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+  font-weight: 900;
+}
+.paper{
+  background-color: #313239;
 }
